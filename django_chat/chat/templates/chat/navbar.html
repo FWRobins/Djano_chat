@@ -1,0 +1,55 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="/chat">Home</a>
+  <!-- {% if 'Manager' in user_groups %}
+    <a class="navbar-brand" href="/">Home</a>
+  {% else %}
+    <a class="navbar-brand" href="{{ branch }}/">{{ branch }}</a>
+  {% endif %} -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+
+      <!-- dropdown for branches -->
+      <!-- {% if user.is_authenticated %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Branches
+        </a>
+        <div class="dropdown-menu">
+          {% if 'Manager' in user_groups %}
+            {% for branch in branches%}
+              <a class="dropdown-item" href="/{{branch}}">{{branch}}</a>
+            {% endfor %}
+            {% else %}
+              {% for group in user_groups %}
+                  <a class="dropdown-item" href="/{{group}}">{{group}}</a>
+              {% endfor %}
+          {% endif %} -->
+        <!-- {% for branch in branches%}
+          <a class="dropdown-item" href="/{{branch}}">{{branch}}</a>
+        {% endfor %} -->
+        <!-- </div>
+      </li>
+      {% endif %} -->
+
+      {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="#">{{user.username}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/chat/logout">Logout</a>
+        </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="/chat/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/chat/register">Register</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

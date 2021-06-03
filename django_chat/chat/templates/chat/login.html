@@ -1,0 +1,21 @@
+{% include './header.html' %}
+
+<div class="container">
+<br>
+<h1>User Login</h1>
+
+{% block content %}
+<form  method="post">
+  <!-- cross site protection -->
+  {% csrf_token %}
+  <!-- django form in paragraph format -->
+  {{form.as_p}}
+  <button class='btn btn-info' type="submit" name="button">Submit</button>
+</form>
+{% endblock %}
+
+<p>If you do not have an account, <a href="/register"><strong>register</strong></a> instead.</p>
+<p><a href="../password_reset/">forgot your password?</a></p>
+
+</div>
+{% include './footer.html' %}

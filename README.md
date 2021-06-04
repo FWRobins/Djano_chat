@@ -11,7 +11,7 @@ In cmd/powershell start enviroment with "scripts/activate" from main directory.
 
 cd to 'django_chat' and run command "$ python manage.py runserver"
 
-When the server is ready you can browse to 127.0.0.1:8000
+When the server is ready you can browse to '127.0.0.1:8000/chat'
 
 ## Details
 
